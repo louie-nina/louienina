@@ -30,7 +30,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 p-1.5 shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-shadow flex items-center justify-center">
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 p-1 shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-shadow flex items-center justify-center">
             <Logo className="w-full h-full text-white" />
           </div>
           <span className="font-semibold tracking-tight hidden sm:inline">
