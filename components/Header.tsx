@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 const NAV = [
   { href: "#stack", label: "Stack" },
@@ -29,8 +30,8 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center font-bold text-sm shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-shadow">
-            LN
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 p-1.5 shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-shadow flex items-center justify-center">
+            <Logo className="w-full h-full text-white" />
           </div>
           <span className="font-semibold tracking-tight hidden sm:inline">
             Louie Nina
