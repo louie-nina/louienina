@@ -5,7 +5,7 @@ type Project = {
   tags: string[];
   demo: string;
   source: string;
-  preview: "donut" | "bars";
+  preview: "donut" | "bars" | "lines";
 };
 
 const PROJECTS: Project[] = [
@@ -28,6 +28,16 @@ const PROJECTS: Project[] = [
     demo: "https://strava-insights-psi.vercel.app",
     source: "https://github.com/louie-nina/strava-insights",
     preview: "bars",
+  },
+  {
+    icon: "✍️",
+    title: "AI Content Writer",
+    description:
+      "Generate platform-tailored content with Claude — LinkedIn, Twitter, Blog, and Email drafts in 4 tones, streaming as Claude writes, with saved history.",
+    tags: ["Next.js 16", "Claude API", "MongoDB", "NextAuth", "Streaming"],
+    demo: "https://ai-content-writer-nu.vercel.app",
+    source: "https://github.com/louie-nina/ai-content-writer",
+    preview: "lines",
   },
 ];
 
@@ -61,6 +71,21 @@ function BarsPreview() {
   );
 }
 
+function LinesPreview() {
+  const lines = [85, 100, 70, 92, 55];
+  return (
+    <div className="flex flex-col gap-1.5 w-24 h-24 justify-center">
+      {lines.map((w, i) => (
+        <div
+          key={i}
+          className="h-2 rounded-full bg-gradient-to-r from-violet-500 to-blue-400"
+          style={{ width: `${w}%`, opacity: 1 - i * 0.12 }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent overflow-hidden hover:border-white/20 transition-colors">
@@ -79,7 +104,13 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
           </div>
           <div className="text-zinc-700">
-            {project.preview === "donut" ? <DonutPreview /> : <BarsPreview />}
+            {project.preview === "donut" ? (
+              <DonutPreview />
+            ) : project.preview === "bars" ? (
+              <BarsPreview />
+            ) : (
+              <LinesPreview />
+            )}
           </div>
         </div>
 
@@ -149,7 +180,7 @@ export default function Work() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {PROJECTS.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
