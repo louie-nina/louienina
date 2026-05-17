@@ -130,7 +130,7 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2 pt-5 border-t border-white/5">
+        <div className="mt-auto pt-6 flex flex-wrap gap-2 border-t border-white/5">
           <a
             href={project.demo}
             target="_blank"
